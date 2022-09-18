@@ -1,0 +1,164 @@
+  
+  <!-- 
+NAME @: Shruti Sawant
+TOPIC @: Risk Analytics Model Deployment
+DATE @: 17/09/2022
+-->
+
+
+ <!----------------------------- BASE SECTION  ----------------------------------->
+
+{% extends "base.html"%}
+
+  <!------------------------------------------------------------------------------->
+
+{% block content %}
+
+
+  <!-------------------------- THANKYOU BODY SECTION ------------------------------->
+
+
+<div class=" w3-pale-yellow">
+  
+<div class="w3-center w3-padding-64">
+  <h1>Thank you. Here is the info you gave:</h1>
+  <hr>
+</div>
+
+
+<div id=table1>
+<div class="container">
+
+  <!-----------------------------  INFO TABLE   ----------------------------------->
+  
+   <table class="table table-dark table-hover">
+   <thead>
+        <tr>
+          <th>INFO</th>
+          <th>DATA</th>
+        </tr>
+      </thead>
+      
+      
+      <tbody>
+      
+        <tr>
+          <b>
+            <td> Full Name :  </td>
+              <td>{{session['Name']}}</td>
+           </b>
+           
+        </tr>
+        
+        <tr>
+          <b>
+            <td> Gender : </td>
+              <td> {{session['Gender']}}</td>
+          </b>
+        </tr>
+            
+         <tr>
+          <b>
+            <td>Marital status:</td>
+              <td>{{session['Maritual']}}</td>
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+            <td>Total No of Dependent People:</td>
+              <td>{{session['Dependent']}}</td>
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+            <td>Educational Status : </td>
+              <td>{{session['Education']}}</td>
+  
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+            <td>Employment Status : </td>
+              <td>{{session['Employment']}}</td>
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+            <td>Applicant Income In Thousand $ : </td>
+              <td>{{session['Aincome']}}</td>
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+            <td>Co-applicant Income In Thousand $ : </td>
+               <td>{{session['Cincome']}}</td>
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+             <td>Total Loan Amount In Thousand $ : </td>
+               <td>{{session['LoanAmount']}}</td>
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+            <td>Duration Of Loan In No Of Months :  </td>
+              <td>{{session['LoanTerm']}}</td>
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+            <td>Do You Have Any Credit Histoy : </td>
+              <td>{{session['credit']}}</td>
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+            <td>Your Property Area : </td>
+              <td>{{session['Property']}}</td>
+          </b>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+  
+</div>
+
+  <!---------------------------- PREDICTION   SECTION  ---------------------------------->
+
+<div class=" w3-pale-blue w3-center">
+  <h1>
+    <hr>
+    <br>
+    {% if results == "Eligible" %}
+      Congratulations {{session['Name']}} 
+      <br>
+      You are {{results}}.
+     
+    {% else %}
+      Sorry {{session['Name']}} 
+      <br>
+      You are {{results}}
+    {% endif %}
+  </h1>
+
+  <br>
+  <br>
+  <br>
+</div>
+
+
+</div>
+
+  {% endblock %}
+
+    <!---------------------------------  THE END  ----------------------------------------->

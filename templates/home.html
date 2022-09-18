@@ -1,0 +1,150 @@
+  
+  <!-- 
+NAME @: Shruti Sawant
+TOPIC @: Risk Analytics Model Deployment
+DATE @: 17/09/2022
+-->
+
+  
+  <!-----------------------------  BASE SECTION  ----------------------------------->
+
+{% extends "base.html"%}
+
+  <!-------------------------------------------------------------------------------->
+
+{% block content %}
+
+
+  <!---------------------------  HOME BODY SECTION   ------------------------------>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="   w3-pale-yellow  w3-large">
+
+    <!-- About Container -->
+    <div class="w3-container" id="about">
+
+        <div class="w3-content" style="max-width:800px">
+
+            <h5 class="w3-center w3-padding-32"><span class="w3-tag w3-wide">ABOUT THE PROJECT</span></h5>
+            
+            <h3>Credit Risk : </h3>
+
+            <br>
+
+            <p>Credit risk is nothing but the default in payment of any loan by the borrower. 
+                In Banking sector this is an important factor to be considered before approving 
+                the loan of an applicant.
+            </p>
+
+            <br>
+
+            <h3>Impact of Credit Risk :</h3>
+
+            <br>
+
+            <p>
+                The bank’s revenue pattern depends on the saving account and loans they offer. 
+                Once an account holder puts money in their saving account, they get certain 
+                interest on their account balance. The bank keeps some part of these balances in 
+                reserve to make payments in case of withdrawals. The rest of the money is given
+                as loans to borrowers. The interest put on loan is the revenue earned by the banks.
+            </p>
+
+            <p>Taking into consideration the factors that will decide whether a person will pay 
+               back the loan or not is crucial for banks. This is a common credit risk problem 
+               which is solved using analytics.
+            
+            <p>While receiving application of a borrower, the bank asks certain details about the 
+              applicant. The general factors that help predict loan default are income, occupation,
+              age, loan amount etc of the applicant.
+            </p>
+        
+    
+        </div>
+    </div>
+
+<br>
+<br>
+
+  <!-----------------------------  FORM SECTIOIN  ----------------------------------->
+
+    <div class="w3-content" id="form1" style="max-width:800px">
+
+    <center>
+    <h1>Please fill out the form below</h1>
+    </center>
+    <br>
+    <hr>
+
+    <form   method="POST">
+        {# This hidden_tag is a CSRF security feature. #}
+        {{ form.hidden_tag() }}
+
+        {{ form.Name.label }}{{form.Name}}
+        <hr>
+
+        {{ form.Gender.label}} {{form.Gender}}
+        <hr>
+
+        {{form.Maritual.label}} {{form.Maritual}}
+        <hr>
+
+        {{form.Dependent.label}} {{form.Dependent}}
+        <hr>
+
+        {{form.Education.label}} {{form.Education}}
+        <hr>
+
+        {{form.Employment.label}} {{form.Employment}}
+        <hr>
+
+        {{form.Aincome.label}} {{form.Aincome}}
+        <hr>
+
+        {{form.Cincome.label}} {{form.Cincome}}
+        <hr>
+
+        {{form.LoanAmount.label}} {{form.LoanAmount}}
+        <hr>
+
+        {{form.LoanTerm.label}} {{form.LoanTerm}}
+        <hr>
+
+        {{form.credit.label}} {{form.credit}}
+        <hr>
+
+        {{form.Property.label}} {{form.Property}}
+        <hr>
+
+        Any other feedback?
+        <br>
+        {{form.feedback}}
+
+        <br>
+     
+        <hr>
+
+        <div class="w3-center">
+
+            {{ form.submit() }}
+
+        </div>
+
+       
+
+    </form>
+
+
+
+    </div>
+
+  <!----------------------------------------------------------------------------->
+
+
+
+
+</div>
+
+{% endblock %}
+
+  <!-----------------------------  THE END  ----------------------------------->
